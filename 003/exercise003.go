@@ -30,11 +30,9 @@ func main() {
 
 // Ex003 returns a map with numbers are their squared values
 func Ex003(n int) map[int]int {
-	// create a map with the size of n
-	var numbers = make(map[int]int, n)
-
+	var ret = make(map[int]int, n)
 	for i := 1; i <= n; i++ {
-		numbers[i] = i * i
+		ret[i] = i*i
 	}
-	return numbers
+	return ret
 }

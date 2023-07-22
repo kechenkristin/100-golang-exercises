@@ -7,15 +7,13 @@ import (
 
 // Ex004 takes a string of comma-seperated numbers and returns a slice of int
 func Ex004(input string) []int {
-	// create a map with the size of n
-	numbers := strings.Split(input, ",")
+	pureStr := strings.ReplaceAll(input, " ", "")
+	strLst := strings.Split(pureStr, ",")
 
-	length := len(numbers)
-	var num = make([]int, length)
-
-	for index, v := range numbers {
-		s := strings.Trim(v, " ")
-		num[index], _ = strconv.Atoi(s)
+	ret := []int{}
+	for i := 0; i < len(strLst); i++ {
+		intVar, _ := strconv.Atoi(strLst[i])
+		ret = append(ret, intVar)
 	}
-	return num
+	return ret
 }

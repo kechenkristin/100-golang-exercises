@@ -23,9 +23,9 @@ func main() {
 
 // Ex001 returns a slice of numbers
 func Ex001(low, high int) string {
-	var numbers []string
-	for i := low; i <= high; i++ {
-		if i%7 == 0 && i%5 != 0 {
+	numbers := []string{}
+	for i := low; i < high; i++ {
+		if i % 7 == 0 && i % 5 != 0 {
 			numbers = append(numbers, strconv.Itoa(i))
 		}
 	}
